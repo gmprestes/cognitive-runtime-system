@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="627" viewBox="0 0 1200 627" role="img" aria-labelledby="title desc">
+  <title id="title">CRS LinkedIn cover</title>
+  <desc id="desc">Capa editorial: modelos maiores nao salvam operacao; controle e memoria sobre agentes, sim.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="45%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="627" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="220" fill="#1D4ED8" opacity="0.12"/>
+  <circle cx="180" cy="520" r="200" fill="#059669" opacity="0.10"/>
+  <circle cx="620" cy="80" r="120" fill="#7C3AED" opacity="0.08"/>
+
+  <!-- Top label -->
+  <rect x="64" y="48" width="220" height="36" rx="18" fill="#0F172A" stroke="#334155"/>
+  <text x="174" y="71" text-anchor="middle" fill="#94A3B8" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="14" font-weight="600">CRS · Architecture</text>
+
+  <!-- Main headline -->
+  <text x="64" y="160" fill="#F8FAFC" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="42" font-weight="700">Modelos maiores não vão</text>
+  <text x="64" y="214" fill="#F8FAFC" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="42" font-weight="700">salvar sua operação.</text>
+
+  <text x="64" y="280" fill="#67E8F9" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="28" font-weight="600">Controle e memória sobre o que os</text>
+  <text x="64" y="320" fill="#67E8F9" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="28" font-weight="600">agentes podem — e não podem — fazer, vão.</text>
+
+  <!-- Accent line -->
+  <rect x="64" y="360" width="180" height="5" rx="3" fill="url(#accent)"/>
+
+  <!-- Three concept chips -->
+  <g filter="url(#soft)">
+    <rect x="64" y="400" width="240" height="88" rx="16" fill="url(#card)" stroke="#334155"/>
+    <rect x="324" y="400" width="240" height="88" rx="16" fill="url(#card)" stroke="#334155"/>
+    <rect x="584" y="400" width="260" height="88" rx="16" fill="url(#card)" stroke="#334155"/>
+  </g>
+
+  <text x="88" y="438" fill="#93C5FD" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700">CONTROLE</text>
+  <text x="88" y="464" fill="#CBD5E1" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14">o que pode / não pode fazer</text>
+
+  <text x="348" y="438" fill="#6EE7B7" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700">MEMÓRIA</text>
+  <text x="348" y="464" fill="#CBD5E1" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14">o que pode / não pode lembrar</text>
+
+  <text x="608" y="438" fill="#FDBA74" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700">RUNTIME</text>
+  <text x="608" y="464" fill="#CBD5E1" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14">modelo propõe · sistema committa</text>
+
+  <!-- Right architecture stack visual -->
+  <g filter="url(#soft)">
+    <rect x="880" y="150" width="260" height="56" rx="12" fill="#2E1065" stroke="#A855F7" stroke-width="1.5"/>
+    <rect x="880" y="222" width="260" height="72" rx="12" fill="#0C1A33" stroke="#38BDF8" stroke-width="2"/>
+    <rect x="880" y="310" width="120" height="64" rx="12" fill="#1C1410" stroke="#F59E0B" stroke-width="1.5"/>
+    <rect x="1020" y="310" width="120" height="64" rx="12" fill="#052E24" stroke="#34D399" stroke-width="1.5"/>
+    <rect x="880" y="390" width="260" height="48" rx="12" fill="#0B1220" stroke="#475569" stroke-width="1.5"/>
+  </g>
+
+  <text x="1010" y="184" text-anchor="middle" fill="#E9D5FF" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600">Human Review</text>
+  <text x="1010" y="254" text-anchor="middle" fill="#E0F2FE" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700">Orchestration Runtime</text>
+  <text x="1010" y="276" text-anchor="middle" fill="#7DD3FC" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">laws · budgets · commit</text>
+  <text x="940" y="348" text-anchor="middle" fill="#FFEDD5" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">Work DAG</text>
+  <text x="1080" y="348" text-anchor="middle" fill="#D1FAE5" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">Memory Graph</text>
+  <text x="1010" y="420" text-anchor="middle" fill="#CBD5E1" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13">Host / World</text>
+
+  <!-- connecting lines -->
+  <line x1="1010" y1="206" x2="1010" y2="222" stroke="#A855F7" stroke-width="2"/>
+  <line x1="1010" y1="294" x2="1010" y2="310" stroke="#38BDF8" stroke-width="2"/>
+  <line x1="940" y1="374" x2="940" y2="390" stroke="#F59E0B" stroke-width="1.5"/>
+  <line x1="1080" y1="374" x2="1080" y2="390" stroke="#34D399" stroke-width="1.5"/>
+
+  <!-- Footer -->
+  <text x="64" y="560" fill="#64748B" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15">Prosa no disco não é arquitetura. Skill não é governança.</text>
+  <text x="64" y="590" fill="#475569" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">cognitive-runtime-system · CRS</text>
+</svg>
