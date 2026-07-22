@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">CRS — Cognitive Runtime System</title>
+  <desc id="desc">Architecture diagram: human review plane, orchestration runtime, judgment models proposing, durable WorkGraph and MemoryGraph committing, host world returning evidence.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="55%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="runtime" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="human" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#DB2777"/>
+    </linearGradient>
+    <linearGradient id="memory" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#065F46"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="work" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9A3412"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
+    </marker>
+    <marker id="arrowAccent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#38BDF8"/>
+    </marker>
+    <marker id="arrowMem" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#34D399"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="680" fill="url(#bg)"/>
+  <circle cx="180" cy="120" r="180" fill="#1D4ED8" opacity="0.08"/>
+  <circle cx="1040" cy="560" r="220" fill="#059669" opacity="0.08"/>
+  <circle cx="900" cy="120" r="140" fill="#7C3AED" opacity="0.07"/>
+
+  <!-- Header -->
+  <text x="60" y="58" fill="#F8FAFC" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="34" font-weight="700">CRS — Cognitive Runtime System</text>
+  <text x="60" y="92" fill="#94A3B8" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="16">Model proposes · Runtime commits · Organization signs memory</text>
+
+  <!-- Human Review Plane -->
+  <g filter="url(#soft)">
+    <rect x="60" y="120" width="1080" height="78" rx="16" fill="#1E1B4B" stroke="url(#human)" stroke-width="2"/>
+  </g>
+  <text x="90" y="155" fill="#E9D5FF" font-family="ui-sans-serif, system-ui, sans-serif" font-size="18" font-weight="700">Human Review Plane</text>
+  <text x="90" y="180" fill="#C4B5FD" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14">Cold memory approval · risk gates · amend / reject / retract</text>
+  <text x="860" y="168" fill="#F9A8D4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">authorize reuse</text>
+
+  <!-- Arrow human -> runtime -->
+  <line x1="600" y1="198" x2="600" y2="228" stroke="#C084FC" stroke-width="2.5" marker-end="url(#arrowAccent)"/>
+
+  <!-- Runtime -->
+  <g filter="url(#soft)">
+    <rect x="260" y="236" width="680" height="118" rx="18" fill="#0C1A33" stroke="url(#runtime)" stroke-width="2.5"/>
+  </g>
+  <text x="290" y="275" fill="#E0F2FE" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" font-weight="700">Orchestration Runtime</text>
+  <text x="290" y="302" fill="#7DD3FC" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14">phases · budgets · stop conditions · view projection · law enforcement</text>
+  <text x="290" y="328" fill="#93C5FD" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">validate → commit | reject</text>
+
+  <!-- Side labels -->
+  <text x="70" y="300" fill="#64748B" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13">PROPOSE</text>
+  <text x="1060" y="300" fill="#64748B" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13">COMMIT</text>
+
+  <!-- Arrows down from runtime -->
+  <line x1="420" y1="354" x2="300" y2="400" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="600" y1="354" x2="600" y2="400" stroke="#38BDF8" stroke-width="2.5" marker-end="url(#arrowAccent)"/>
+  <line x1="780" y1="354" x2="900" y2="400" stroke="#34D399" stroke-width="2" marker-end="url(#arrowMem)"/>
+
+  <!-- Judgment -->
+  <g filter="url(#soft)">
+    <rect x="60" y="408" width="300" height="150" rx="16" fill="#111827" stroke="#475569" stroke-width="2"/>
+  </g>
+  <text x="90" y="448" fill="#F1F5F9" font-family="ui-sans-serif, system-ui, sans-serif" font-size="18" font-weight="700">Judgment Models</text>
+  <text x="90" y="478" fill="#94A3B8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14">LLMs / specialist agents</text>
+  <text x="90" y="508" fill="#CBD5E1" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">typed Proposal only</text>
+  <text x="90" y="532" fill="#64748B" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13">no durable writes</text>
+
+  <!-- WorkGraph -->
+  <g filter="url(#soft)">
+    <rect x="400" y="408" width="300" height="150" rx="16" fill="#1C1410" stroke="url(#work)" stroke-width="2"/>
+  </g>
+  <text x="430" y="448" fill="#FFEDD5" font-family="ui-sans-serif, system-ui, sans-serif" font-size="18" font-weight="700">WorkGraph (DAG)</text>
+  <text x="430" y="478" fill="#FDBA74" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14">tasks · deps · budgets</text>
+  <!-- mini DAG -->
+  <circle cx="470" cy="520" r="10" fill="#F59E0B"/>
+  <circle cx="520" cy="520" r="10" fill="#F59E0B"/>
+  <circle cx="570" cy="520" r="10" fill="#FBBF24"/>
+  <circle cx="620" cy="520" r="10" fill="#FDE68A"/>
+  <line x1="480" y1="520" x2="510" y2="520" stroke="#FDBA74" stroke-width="2"/>
+  <line x1="530" y1="520" x2="560" y2="520" stroke="#FDBA74" stroke-width="2"/>
+  <line x1="580" y1="520" x2="610" y2="520" stroke="#FDBA74" stroke-width="2"/>
+  <text x="455" y="548" fill="#9A3412" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">committed plan</text>
+
+  <!-- MemoryGraph -->
+  <g filter="url(#soft)">
+    <rect x="740" y="408" width="400" height="150" rx="16" fill="#052E24" stroke="url(#memory)" stroke-width="2"/>
+  </g>
+  <text x="770" y="448" fill="#D1FAE5" font-family="ui-sans-serif, system-ui, sans-serif" font-size="18" font-weight="700">Memory Graph</text>
+  <text x="770" y="478" fill="#6EE7B7" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14">episodes · evidence · lessons · impact</text>
+  <!-- mini graph -->
+  <circle cx="820" cy="520" r="12" fill="#10B981"/>
+  <circle cx="880" cy="510" r="10" fill="#34D399"/>
+  <circle cx="880" cy="540" r="10" fill="#6EE7B7"/>
+  <circle cx="940" cy="520" r="12" fill="#059669"/>
+  <circle cx="1000" cy="520" r="10" fill="#A7F3D0"/>
+  <line x1="832" y1="520" x2="870" y2="512" stroke="#6EE7B7" stroke-width="2"/>
+  <line x1="832" y1="520" x2="870" y2="536" stroke="#6EE7B7" stroke-width="2"/>
+  <line x1="890" y1="515" x2="928" y2="518" stroke="#6EE7B7" stroke-width="2"/>
+  <line x1="952" y1="520" x2="990" y2="520" stroke="#6EE7B7" stroke-width="2"/>
+  <text x="830" y="560" fill="#047857" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">HELPED · HURT · UNUSED</text>
+
+  <!-- Host -->
+  <g filter="url(#soft)">
+    <rect x="260" y="590" width="680" height="58" rx="14" fill="#0B1220" stroke="#334155" stroke-width="2"/>
+  </g>
+  <text x="290" y="626" fill="#E2E8F0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600">Host / World — git · CI · tools · other agents · observations → EvidenceLedger</text>
+
+  <!-- Arrows to host -->
+  <line x1="510" y1="558" x2="520" y2="588" stroke="#F59E0B" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="600" y1="558" x2="600" y2="588" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 250 483 C 180 483, 180 619, 260 619" fill="none" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+
+  <!-- Footer badge -->
+  <rect x="900" y="28" width="240" height="36" rx="18" fill="#0F172A" stroke="#334155"/>
+  <text x="1020" y="51" text-anchor="middle" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">architecture proposal v0.3</text>
+</svg>

@@ -11,6 +11,14 @@
 
 ---
 
+## Diagrama de capa
+
+![Arquitetura CRS: plano de review humano, runtime de orquestração, modelos de juízo propondo, WorkGraph e MemoryGraph commitando, host devolvendo evidência](docs/assets/crs-cover.svg)
+
+*Modelo propõe → runtime valida e committa → organização assina o que pode ser lembrado.*
+
+---
+
 ## A ideia em linguagem simples
 
 A maior parte dos sistemas multiagente trata o modelo como a *mente* do sistema:
@@ -307,6 +315,74 @@ Este repositório publica a **proposta de arquitetura** (conceito, contratos, sc
 Inglês: [README.md](README.md) · [docs/](docs/)
 
 ---
+
+
+## FAQ
+
+### O CRS é produto, biblioteca ou paper?
+
+É uma **proposta de arquitetura**: princípios, contratos, schemas e um formato de referência para sistemas multiagente. Um runtime de referência está planejado; o núcleo normativo é o modelo de autoridade e memória, não o nome de um pacote.
+
+### Em que isso difere de LangGraph / CrewAI / AutoGen / “agent swarms”?
+
+Essas tools são bons **músculos de workflow**. O CRS faz uma pergunta mais afiada: **quem tem permissão de commitar estado durável?**  
+Se o modelo grava planos e “verdade” organizacional sem validação, proveniência e regras de promoção, você tem *sintaxe* de orquestração sem *autoridade* cognitiva. O CRS pode ser implementado em cima de vários runtimes; o tipo é o ponto.
+
+### Humanos precisam aprovar cada ação do agente?
+
+Não. Esse padrão não escala.  
+No CRS, humanos se concentram em:
+
+1. **Memória cold** — o que a organização pode reutilizar  
+2. **Gates de risco reais** — produção, segurança, ações irreversíveis  
+
+O uso de tools no hot path fica sob policy e budgets do runtime.
+
+### Por que grafo em vez de memória vetorial / RAG?
+
+RAG é ótimo para “texto parecido.” Orquestração precisa de perguntas causais: o que tentamos, qual evidência sustentou, quem aprovou, se reutilizar ajudou ou doeu, e o que supersede.  
+Vetores ainda podem indexar nós; não substituem **memória com dono, ligações e avaliação**.
+
+### O que é “commit do DAG” em uma frase?
+
+O modelo *sugere* um plano de tarefas; o runtime *torna esse plano estado oficial durável* só depois de checagens de lei (sem ciclos, budget, owners, constraints). Sem commit, plano é conversa.
+
+### Um modelo pequeno funciona com CRS?
+
+Muitas vezes melhor do que se espera **em trabalho com forma de processo**, porque o rigor vive no runtime.  
+A qualidade bruta de juízo ainda depende do modelo: o CRS sobe honestidade e disciplina de reuso; não cria gênio de domínio por mágica.
+
+### O que impede o swarm de rodar para sempre?
+
+**Budgets e condições de parada** explícitos: max filhos, rounds de replan, wall-clock, custo, writes candidatas de memória. Budget esgotado → `stop` com razão. Swarm sem teto é loop de custo.
+
+### O que significa “logar ≠ aprender”?
+
+Escrever texto em um store não é aprender.  
+O CRS trata aprendizado como: episode + evidence + mudança de estado de memória + impacto posterior (`HELPED` / `HURT` / `UNUSED`). Acúmulo sem avaliação não pode ser reportado como sucesso.
+
+### Isso reivindica AGI?
+
+Não. CRS é uma **arquitetura para trabalho multiagente confiável e memória organizacional**. É um contraponto a “escalar o monólogo,” não uma tese de consciência.
+
+### Por onde começar a ler?
+
+1. Este README (ideia + walkthrough)  
+2. [Contratos de autoridade](docs/pt-BR/05-contratos-autoridade.md)  
+3. [Memory graph](docs/pt-BR/03-memory-graph.md)  
+4. [Human memory review](docs/pt-BR/04-human-memory-review.md)
+
+### Posso implementar só parte do CRS?
+
+Sim. Um caminho parcial útil:
+
+1. Proposal vs commit para planos (WorkGraph)  
+2. Budgets e condições de parada  
+3. Lessons ligadas a evidência (warm)  
+4. Promoção humana para memória cold  
+
+Conformidade completa precisa dos seis componentes da fórmula, mas valor incremental começa no passo 1.
+
 
 ## Contribuir / discussão
 
