@@ -1,5 +1,7 @@
 # Human Memory Review
 
+**English** · **[Português (Brasil)](pt-BR/04-human-memory-review.md)**
+
 ## Thesis
 
 > Humans should not review *every answer* from the swarm.  

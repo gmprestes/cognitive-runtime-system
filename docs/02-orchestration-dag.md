@@ -1,5 +1,7 @@
 # Orchestration and DAG
 
+**English** · **[Português (Brasil)](pt-BR/02-orquestracao-dag.md)**
+
 ## What a DAG is
 
 **DAG** = *Directed Acyclic Graph*.

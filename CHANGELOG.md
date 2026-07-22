@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.3 — 2026-07-21
+
+### Docs
+
+- Add `README.pt-BR.md` and full Portuguese documentation under `docs/pt-BR/`
+- Cross-link EN ↔ pt-BR in README and docs
+
 ## 0.3.2 — 2026-07-21
 
 ### Docs

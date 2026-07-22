@@ -1,5 +1,7 @@
 # CRS Architecture v0.3
 
+**English** · **[Português (Brasil)](pt-BR/01-arquitetura.md)**
+
 ## Components
 
 ```text

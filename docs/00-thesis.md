@@ -1,5 +1,7 @@
 # CRS Thesis
 
+**English** · **[Português (Brasil)](pt-BR/00-tese.md)**
+
 ## In one sentence
 
 **The orchestration cycle and the memory cycle must be a program with laws; the model only judges under uncertainty; what the organization reuses needs provenance and, when it matters, human review.**

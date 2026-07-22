@@ -1,5 +1,7 @@
 # Authority contracts (CRS v0.3)
 
+**English** · **[Português (Brasil)](pt-BR/05-contratos-autoridade.md)**
+
 ## Principle
 
 If the model can alone mutate what the organization believes and reuses, you do not have a cognitive runtime — you have a monologue with side effects.

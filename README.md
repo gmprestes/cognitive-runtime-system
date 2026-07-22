@@ -1,5 +1,7 @@
 # CRS — Cognitive Runtime System
 
+**English** · **[Português (Brasil)](README.pt-BR.md)**
+
 **Orchestration with laws. Memory as a graph. Humans as reviewers of what the organization is allowed to remember.**
 
 > CRS is not “yet another multi-agent framework.”  

@@ -1,5 +1,7 @@
 # Memory Graph
 
+**English** · **[Português (Brasil)](pt-BR/03-memory-graph.md)**
+
 ## Idea
 
 Organizational memory is not:
