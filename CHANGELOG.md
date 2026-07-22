@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.2 — 2026-07-21
+
+### Docs
+
+- Remove social launch copy and internal research history notes from the public README
+
 ## 0.3.1 — 2026-07-21
 
 ### Docs
@@ -11,7 +17,7 @@
 
 ### Concept
 
-- CRS reorientation: from generic episodic deliberation to a **multi-agent orchestration architecture**
+- Multi-agent orchestration architecture
 - Memory Graph with hot/warm/cold planes
 - Human Memory Review as a governance plane
 - WorkGraph / DAG commit as the unit of official plan
@@ -20,8 +26,3 @@
 ### Docs
 
 - `docs/00-thesis.md` … `docs/05-authority-contracts.md`
-- `content/linkedin.md`, `content/x-thread.md`
-
-### Historical note
-
-The earlier research line (Rust L1 runtime, OpenAI-like proxy, A/B evals) validated parts of the proposal/commit contract and was discontinued as a product surface. This repository publishes the consolidated v0.3 thesis.

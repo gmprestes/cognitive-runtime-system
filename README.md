@@ -161,15 +161,6 @@ This repository publishes the **architecture proposal** (concept, contracts, sch
 | Reference runtime (implementation) | planned |
 | Integration with real swarms (e.g. coding agents) | planned |
 
-An earlier research line (Rust L1, A/B evals, OpenAI-like proxy) validated parts of the authority contract and was archived. **v0.3 reorients CRS toward multi-agent orchestration + graph memory with human review.**
-
----
-
-## Social / launch copy
-
-- [content/linkedin.md](content/linkedin.md) — LinkedIn post  
-- [content/x-thread.md](content/x-thread.md) — X thread  
-
 ---
 
 ## Principles (non-negotiable)
