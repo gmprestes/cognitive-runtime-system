@@ -1,80 +1,80 @@
-# Post LinkedIn — CRS
+# LinkedIn post — CRS
 
-> Copie, ajuste a primeira pessoa se quiser, e publique.  
-> Tom: executivo-técnico, BR, sem hype de AGI.
+> Copy, tweak first person if needed, and publish.  
+> Tone: executive-technical, no AGI hype.
 
 ---
 
-## Versão principal (recomendada)
+## Main version (recommended)
 
-**A próxima vantagem competitiva não é o modelo. É a memória da empresa.**
+**The next competitive advantage is not the model. It is the company’s memory.**
 
-Todo mundo está montando “exércitos de agentes”.  
-Pouca gente está desenhando **como esses agentes se coordenam** — e o que a organização tem permissão de **lembrar**.
+Everyone is assembling “armies of agents.”  
+Few people are designing **how those agents coordinate** — and what the organization is allowed to **remember**.
 
-Nas últimas semanas eu fechei o conceito de **CRS (Cognitive Runtime System)**:
+I just published **CRS (Cognitive Runtime System)**:
 
-Não é mais um chatbot com tools.  
-É uma arquitetura de orquestração em que:
+Not another chatbot with tools.  
+An orchestration architecture where:
 
-1. **O runtime manda no processo** (fases, orçamento, parada)  
-2. **O modelo só propõe** (nunca grava sozinho a “verdade” da empresa)  
-3. O trabalho vira um **DAG** — mapa de tarefas com dependências e paralelismo  
-4. A memória vira um **grafo** — episódios, evidências, lições, impacto  
-5. **Humanos revisam memória**, não cada clique do agente  
+1. **The runtime owns the process** (phases, budget, stop conditions)  
+2. **The model only proposes** (it never alone writes the company’s “truth”)  
+3. Work becomes a **DAG** — a task map with dependencies and parallelism  
+4. Memory becomes a **graph** — episodes, evidence, lessons, impact  
+5. **Humans review memory**, not every agent click  
 
-A diferença parece sutil. Não é.
+The difference looks subtle. It is not.
 
-Hoje, multi-agent sem governança escala **rumor** na mesma velocidade em que escala produtividade.  
-Um agente “aprende” errado, grava no contexto/RAG, e o swarm repete o erro o semestre inteiro.
+Today, multi-agent systems without governance scale **rumor** at the same speed they scale productivity.  
+One agent “learns” wrong, writes it into context/RAG, and the swarm repeats the mistake all quarter.
 
-No CRS, o fluxo é outro:
+In CRS the flow is different:
 
 ```text
-objetivo → plano proposto → commit do DAG → agentes executam
-→ evidências → proposta de lição → review humano/verificador
-→ memória canônica → próxima orquestração reutiliza com critério
+goal → plan proposal → DAG commit → agents execute
+→ evidence → lesson proposal → human/verifier review
+→ canonical memory → next orchestration reuses with criteria
 ```
 
-Em uma frase:
+In one line:
 
-> **LLM é motor. Orquestração é direção. Memória governada é o mapa que a empresa escolhe manter.**
+> **LLM is the engine. Orchestration is the steering. Governed memory is the map the company chooses to keep.**
 
-Isso muda o papel do humano também.  
-O ponto de alavancagem não é aprovar cada comando.  
-É assinar o que vira **runbook vivo** da organização.
+That also changes the human role.  
+The leverage point is not approving every command.  
+It is signing what becomes the organization’s **living runbook**.
 
-Publiquei a proposta aberta (tese, arquitetura, contratos, schemas):
+Open proposal (thesis, architecture, contracts, schemas):
 
 👉 https://github.com/gmprestes/cognitive-runtime-system
 
-Se você está construindo agentes em produção — em produto, ops ou engenharia — me interessa o debate:
+If you are building agents in production — product, ops, or engineering — I want this debate:
 
-- O que na *sua* empresa deveria ser memória canônica?  
-- O que pode ser automático (teste/CI) vs o que exige review humano?  
-- Como vocês medem se a memória ajudou ou atrapalhou?
+- What in *your* company should be canonical memory?  
+- What can be automatic (tests/CI) vs what requires human review?  
+- How do you measure whether memory helped or hurt?
 
-**Modelo é commodity. Processo + memória com dono é moat.**
+**Models are commodity. Process + owned memory is the moat.**
 
 ---
 
-## Versão curta (alternativa)
+## Short version (alternative)
 
-Multi-agent sem governança não é inteligência.  
-É custo com paralelismo.
+Multi-agent without governance is not intelligence.  
+It is cost with parallelism.
 
-Estou abrindo o **CRS (Cognitive Runtime System)**: arquitetura de orquestração onde o runtime tem leis, o modelo só propõe, o trabalho é um DAG e a memória é um grafo revisado por humanos.
+I am opening **CRS (Cognitive Runtime System)**: an orchestration architecture where the runtime has laws, the model only proposes, work is a DAG, and memory is a graph reviewed by humans.
 
-Humanos não babysitam cada ação.  
-Eles autorizam o que a empresa pode **reutilizar**.
+Humans do not babysit every action.  
+They authorize what the company may **reuse**.
 
 Repo: https://github.com/gmprestes/cognitive-runtime-system
 
-Modelo commodity. Memória governada = vantagem.
+Commodity model. Governed memory = advantage.
 
 ---
 
-## Sugestão de imagem/capa
+## Cover image suggestion
 
-- Diagrama simples do README (runtime no centro, humanos no topo, agentes embaixo)  
-- Ou frase em card: **“Revise a memória. Não o keystroke.”**
+- Simple diagram from the README (runtime in the center, humans on top, agents below)  
+- Or a card line: **“Review the memory. Not the keystroke.”**

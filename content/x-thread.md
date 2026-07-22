@@ -1,19 +1,19 @@
-# Thread X (Twitter) — CRS
+# X (Twitter) thread — CRS
 
-> Formato: thread. Cada bloco = 1 post.  
-> Ajuste menções/hashtags se quiser. Evite mais de 2 hashtags no primeiro tweet.
+> Format: thread. Each block = 1 post.  
+> Adjust mentions/hashtags if you want. Avoid more than 2 hashtags on the first tweet.
 
 ---
 
-## 1/ gancho
+## 1/ hook
 
-A corrida de IA está obcecada com o tamanho do modelo.
+The AI race is obsessed with model size.
 
-Eu acho que o jogo de verdade, em empresas, é outro:
+I think the real game inside companies is different:
 
-**orquestração com leis + memória que a organização tem permissão de lembrar.**
+**orchestration with laws + memory the organization is allowed to remember.**
 
-Chamei isso de CRS — Cognitive Runtime System.
+I call that CRS — Cognitive Runtime System.
 
 🧵
 
@@ -21,127 +21,127 @@ Chamei isso de CRS — Cognitive Runtime System.
 
 ## 2/
 
-Multi-agent hoje, na prática:
+Multi-agent today, in practice:
 
-• vários agentes  
+• several agents  
 • tools  
-• um pouco de RAG  
-• muita esperança
+• a bit of RAG  
+• a lot of hope
 
-Escala produtividade… e também escala **rumor**.
+It scales productivity… and also scales **rumor**.
 
 ---
 
 ## 3/
 
-CRS parte de uma separação simples:
+CRS starts from a simple separation:
 
-🧠 modelo = juízo (propõe)  
-⚙️ runtime = controle (valida, committa, para)  
-🕸️ memória = grafo com proveniência  
-👤 humano = revisor do que pode ser reutilizado
+🧠 model = judgment (proposes)  
+⚙️ runtime = control (validates, commits, stops)  
+🕸️ memory = graph with provenance  
+👤 human = reviewer of what may be reused
 
-Se o modelo grava “verdade” sozinho, você não tem sistema. Tem monólogo com side effects.
+If the model writes “truth” alone, you do not have a system. You have a monologue with side effects.
 
 ---
 
 ## 4/
 
-Orquestração de verdade usa **DAG**:
+Real orchestration uses a **DAG**:
 
-grafo de tarefas com dependências, paralelismo e sem ciclos.
+a task graph with dependencies, parallelism, and no cycles.
 
-O modelo *propõe* o plano.  
-O runtime *committa* o DAG.
+The model *proposes* the plan.  
+The runtime *commits* the DAG.
 
-Sem commit, plano é conversa.  
-Com commit, plano é máquina de trabalho.
+Without commit, a plan is conversation.  
+With commit, a plan is a work machine.
 
 ---
 
 ## 5/
 
-Memória de verdade não é só embedding.
+Real memory is not only embeddings.
 
-É grafo:
+It is a graph:
 
 episode → evidence → lesson/belief  
-com arestas de impacto: HELPED / HURT / UNUSED
+with impact edges: HELPED / HURT / UNUSED
 
-Gravar ≠ aprender.  
-Aprender é mudar o futuro com avaliação.
+Logging ≠ learning.  
+Learning is changing the future with evaluation.
 
 ---
 
-## 6/ o twist humano
+## 6/ the human twist
 
-Human-in-the-loop errado = aprovar cada tool call.  
-Caro. Lento. Todo mundo desiste.
+Wrong human-in-the-loop = approve every tool call.  
+Expensive. Slow. Everyone quits.
 
-Human-in-the-loop certo no CRS = **Memory Review**.
+Right human-in-the-loop in CRS = **Memory Review**.
 
-O revisor não babysita o agente.  
-Ele assina o runbook vivo da empresa.
+The reviewer does not babysit the agent.  
+They sign the company’s living runbook.
 
 ---
 
 ## 7/
 
-Fluxo:
+Flow:
 
-objetivo  
-→ proposal de plano  
-→ commit do DAG  
-→ swarm executa  
-→ evidências  
-→ proposal de memória  
-→ review humano/verificador  
+goal  
+→ plan proposal  
+→ DAG commit  
+→ swarm executes  
+→ evidence  
+→ memory proposal  
+→ human/verifier review  
 → cold memory  
-→ próxima orquestração
+→ next orchestration
 
-Isso é organização que trabalha *e* lembra com critério.
+That is an organization that works *and* remembers with criteria.
 
 ---
 
-## 8/ frase de fecho
+## 8/ closing line
 
-LLM é motor.  
-Orquestração é direção.  
-Memória governada é o mapa.
+LLM is the engine.  
+Orchestration is the steering.  
+Governed memory is the map.
 
-Big tech escala juízo.  
-Quem opera empresa precisa escalar **processo + memória com dono**.
+Big tech scales judgment.  
+Operators need to scale **process + owned memory**.
 
 ---
 
 ## 9/ CTA + repo
 
-Abri a proposta (tese, arquitetura, contratos, schemas):
+Open proposal (thesis, architecture, contracts, schemas):
 
 https://github.com/gmprestes/cognitive-runtime-system
 
-Se você constrói agentes em produção, quero ouvir:
+If you build agents in production, I want to hear:
 
-o que na sua org deveria ser memória canônica — e o que nunca deveria ser escrito sem humano?
+what in your org should be canonical memory — and what should never be written without a human?
 
 ---
 
-## Tweet único (se não quiser thread)
+## Single tweet (if you do not want a thread)
 
-Multi-agent sem governança escala rumor na mesma velocidade que produtividade.
+Multi-agent without governance scales rumor at the same speed as productivity.
 
-CRS = runtime com leis + DAG de trabalho + memória em grafo + humanos revisando o que a empresa pode reutilizar.
+CRS = runtime with laws + work DAG + graph memory + humans reviewing what the company may reuse.
 
-Modelo propõe. Sistema committa. Org assina a memória.
+Model proposes. System commits. Org signs the memory.
 
 https://github.com/gmprestes/cognitive-runtime-system
 
 ---
 
-## Reply pronto (se alguém pedir “é LangGraph?”)
+## Ready reply (if someone asks “is this LangGraph?”)
 
-LangGraph/crew/etc. são ótimos *músculos de workflow*.
+LangGraph/crew/etc. are great *workflow muscles*.
 
-CRS é o *contrato de autoridade*: o que o modelo nunca pode commitar sozinho, como memória vira canônica, e onde o humano entra (cold memory, não cada keystroke).
+CRS is the *authority contract*: what the model must never commit alone, how memory becomes canonical, and where humans enter (cold memory, not every keystroke).
 
-Pode implementar CRS *em cima* de vários runtimes. O ponto é o tipo, não a lib.
+You can implement CRS *on top of* many runtimes. The point is the type, not the library.

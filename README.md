@@ -1,15 +1,15 @@
 # CRS — Cognitive Runtime System
 
-**Orquestração com leis. Memória em grafo. Humanos como revisores do que a organização pode lembrar.**
+**Orchestration with laws. Memory as a graph. Humans as reviewers of what the organization is allowed to remember.**
 
-> CRS não é “mais um multi-agent framework”.  
-> É uma **proposta de arquitetura**: o ciclo de trabalho e de memória é um **programa** (runtime); o LLM só **propõe**; o commit de estado e de memória é **governado**.
+> CRS is not “yet another multi-agent framework.”  
+> It is an **architecture proposal**: the work cycle and the memory cycle are a **program** (runtime); the LLM only **proposes**; commits to state and memory are **governed**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
 
-## TL;DR (EN)
+## TL;DR
 
 **CRS (Cognitive Runtime System)** is an architecture for multi-agent orchestration:
 
@@ -22,70 +22,70 @@ Moat thesis: *commodity judgment models + proprietary orchestration + governed o
 
 ---
 
-## Por que CRS existe
+## Why CRS exists
 
-Hoje a indústria confunde três coisas:
+The industry often confuses three different things:
 
-| Coisa | O que costuma ser | O que CRS separa |
+| Thing | Common practice | CRS separation |
 |---|---|---|
-| **Juízo** | “O modelo é inteligente” | LLM/agentes **propõem** |
-| **Controle** | Prompt + esperança | Runtime com **leis e budgets** |
-| **Memória** | RAG / chat log / vector dump | **Grafo** com proveniência e review |
+| **Judgment** | “The model is smart” | LLMs/agents **propose** |
+| **Control** | Prompt + hope | Runtime with **laws and budgets** |
+| **Memory** | RAG / chat log / vector dump | **Graph** with provenance and review |
 
-Sem essa separação, um swarm de agentes:
+Without that separation, an agent swarm:
 
-- repete erros caros  
-- “aprende” rumores em alta velocidade  
-- não tem dono para o que virou verdade operacional  
+- repeats expensive mistakes  
+- “learns” rumors at high speed  
+- has no owner for operational truth  
 
-Com CRS:
+With CRS:
 
 ```text
-goal → proposal de plano → commit de DAG → swarm executa
-     → evidências → proposal de memória → review (humano/verificador)
-     → MemoryGraph commit → próxima orquestração reutiliza com critério
+goal → plan proposal → DAG commit → swarm executes
+     → evidence → memory proposal → human/verifier review
+     → MemoryGraph commit → next orchestration reuses with criteria
 ```
 
 ---
 
-## Conceitos centrais
+## Core concepts
 
-### 1. Runtime de orquestração
+### 1. Orchestration runtime
 
-O CRS coordena agentes (e humanos) com:
+CRS coordinates agents (and humans) with:
 
-- **DAG de trabalho** (dependências, paralelismo, sem ciclos)  
-- **fases** (`plan → spawn → observe → critique → replan | merge | stop`)  
-- **budgets** (filhos, rounds, wall-clock, risco)  
-- **autoridade** (quem propõe vs quem committa)
+- a **work DAG** (dependencies, parallelism, no cycles)  
+- **phases** (`plan → spawn → observe → critique → replan | merge | stop`)  
+- **budgets** (children, rounds, wall-clock, risk)  
+- **authority** (who proposes vs who commits)
 
-Leitura: [docs/02-orquestracao-dag.md](docs/02-orquestracao-dag.md)
+Read: [docs/02-orchestration-dag.md](docs/02-orchestration-dag.md)
 
 ### 2. Memory Graph
 
-Memória organizacional como grafo causal — não só similaridade vetorial:
+Organizational memory as a causal graph — not only vector similarity:
 
-- nós: Episode, Task, Agent, Evidence, Belief, Lesson, HumanDecision…  
-- arestas: `SUPPORTS`, `DERIVED_FROM`, `SUPERSEDES`, `HELPED` / `HURT` / `UNUSED`…
+- nodes: Episode, Task, Agent, Evidence, Belief, Lesson, HumanDecision…  
+- edges: `SUPPORTS`, `DERIVED_FROM`, `SUPERSEDES`, `HELPED` / `HURT` / `UNUSED`…
 
-Leitura: [docs/03-memory-graph.md](docs/03-memory-graph.md)
+Read: [docs/03-memory-graph.md](docs/03-memory-graph.md)
 
 ### 3. Human Memory Review
 
-Humanos não babysitam cada tool call.  
-Eles **autorizam o que pode ser lembrado e reaplicado**.
+Humans do not babysit every tool call.  
+They **authorize what may be remembered and reapplied**.
 
-Três planos:
+Three memory planes:
 
-| Plano | Conteúdo | Quem escreve |
+| Plane | Content | Who writes |
 |---|---|---|
-| Hot | estado da tarefa agora | runtime + agentes |
-| Warm | candidatas a lição/crença | agentes propõem |
-| Cold | memória canônica da org | **humano** (ou dual control) |
+| Hot | task state now | runtime + agents |
+| Warm | candidate lessons/beliefs | agents propose |
+| Cold | canonical org memory | **human** (or dual control) |
 
-Leitura: [docs/04-human-memory-review.md](docs/04-human-memory-review.md)
+Read: [docs/04-human-memory-review.md](docs/04-human-memory-review.md)
 
-### 4. Contrato de autoridade
+### 4. Authority contract
 
 ```text
 JudgmentModel  → MAY propose, MUST NOT mutate durable state
@@ -94,16 +94,16 @@ Host/World     → executes tools, returns observations
 Human          → reviews memory & high-risk gates
 ```
 
-Leitura: [docs/05-contratos-autoridade.md](docs/05-contratos-autoridade.md)
+Read: [docs/05-authority-contracts.md](docs/05-authority-contracts.md)
 
 ---
 
-## Arquitetura (visão)
+## Architecture (overview)
 
 ```text
 ┌──────────────────────────────────────────────────────┐
 │  Human Review Plane                                  │
-│  approve / amend / reject memória e gates de risco   │
+│  approve / amend / reject memory and risk gates      │
 └───────────────────────────┬──────────────────────────┘
 ┌───────────────────────────▼──────────────────────────┐
 │  CRS Orchestration Runtime                           │
@@ -123,82 +123,82 @@ Leitura: [docs/05-contratos-autoridade.md](docs/05-contratos-autoridade.md)
 └──────────────────┘
 ```
 
-Detalhe: [docs/01-arquitetura.md](docs/01-arquitetura.md) · Tese: [docs/00-tese.md](docs/00-tese.md)
+Detail: [docs/01-architecture.md](docs/01-architecture.md) · Thesis: [docs/00-thesis.md](docs/00-thesis.md)
 
 ---
 
-## Fórmula
+## Formula
 
 ```text
 CRS =
   OrchestrationRuntime
-+ WorkGraph                 # DAG de tarefas
-+ MemoryGraph               # memória causal da organização
++ WorkGraph                 # task DAG
++ MemoryGraph               # causal organizational memory
 + EvidenceLedger
-+ JudgmentModels            # LLMs / agentes (só propõem)
++ JudgmentModels            # LLMs / agents (propose only)
 + HumanReviewPlane
 ```
 
 ---
 
-## O que CRS **não** é
+## What CRS is **not**
 
-- Não é AGI  
-- Não substitui modelos maiores/melhores de juízo  
-- Não é LangGraph com outro nome (o diferencial é **autoridade + memória governada**)  
-- Não exige humano em cada ação — exige humano no **cold memory** e em riscos reais  
+- Not AGI  
+- Not a replacement for better/larger judgment models  
+- Not LangGraph under another name (the differentiator is **authority + governed memory**)  
+- Does not require a human on every action — it requires humans on **cold memory** and real risk gates  
 
 ---
 
 ## Status
 
-Este repositório publica a **proposta de arquitetura** (conceito, contratos, schemas).
+This repository publishes the **architecture proposal** (concept, contracts, schemas).
 
-| Camada | Status |
+| Layer | Status |
 |---|---|
-| Tese e contratos | v0.3 (este repo) |
-| Schemas JSON (WorkGraph / MemoryGraph / Proposal) | rascunho em `schemas/` |
-| Runtime de referência (implementação) | planejado |
-| Integração com swarms reais (ex.: coding agents) | planejado |
+| Thesis and contracts | v0.3 (this repo) |
+| JSON schemas (WorkGraph / MemoryGraph / Proposal) | draft in `schemas/` |
+| Reference runtime (implementation) | planned |
+| Integration with real swarms (e.g. coding agents) | planned |
 
-Linha de pesquisa anterior (L1 Rust, evals A/B, proxy OpenAI-like) validou partes do contrato de autoridade e foi arquivada. A v0.3 **reorienta o CRS para orquestração multi-agente + memória-grafo com review humano**.
-
----
-
-## Conteúdo para divulgação
-
-- [content/linkedin.md](content/linkedin.md) — post LinkedIn  
-- [content/x-thread.md](content/x-thread.md) — thread no X  
+An earlier research line (Rust L1, A/B evals, OpenAI-like proxy) validated parts of the authority contract and was archived. **v0.3 reorients CRS toward multi-agent orchestration + graph memory with human review.**
 
 ---
 
-## Princípios (não negociáveis)
+## Social / launch copy
 
-1. **Controle e invariantes são código** — não são amostrados pela rede.  
-2. **Trabalho e memória são estado mutável** — não só prosa no contexto.  
-3. **Crescimento exige experiência avaliada** — gravar ≠ aprender.  
-4. **Crença durável exige proveniência** — e, quando a política manda, review.  
-5. **Budget finito** — swarm sem teto é loop, não inteligência.
+- [content/linkedin.md](content/linkedin.md) — LinkedIn post  
+- [content/x-thread.md](content/x-thread.md) — X thread  
 
 ---
 
-## Contribuir / conversar
+## Principles (non-negotiable)
 
-Issues e discussões são bem-vindas — especialmente:
-
-- schemas de memória e políticas de promoção cold  
-- métricas de `HELPED` / `HURT` / `UNUSED`  
-- papéis humanos de memory reviewer em empresas reais  
-
----
-
-## Licença
-
-MIT — ver [LICENSE](LICENSE).
+1. **Control and invariants are code** — they are not sampled by the network.  
+2. **Work and memory are mutable state** — not only prose in context.  
+3. **Growth requires evaluated experience** — logging ≠ learning.  
+4. **Durable belief requires provenance** — and, when policy requires it, review.  
+5. **Finite budget** — a swarm without a ceiling is a loop, not intelligence.
 
 ---
 
-## Citação curta
+## Contributing / discussion
 
-> O modelo é commodity.  
-> A orquestração com leis e a memória governada da organização são o moat.
+Issues and discussions are welcome — especially on:
+
+- memory schemas and cold-promotion policies  
+- `HELPED` / `HURT` / `UNUSED` metrics  
+- real-world Memory Reviewer roles in companies  
+
+---
+
+## License
+
+MIT — see [LICENSE](LICENSE).
+
+---
+
+## Short citation
+
+> The model is commodity.  
+> Orchestration with laws and governed organizational memory are the moat.

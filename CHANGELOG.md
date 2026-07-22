@@ -1,20 +1,27 @@
 # Changelog
 
-## 0.3.0 — 2026-07-21
-
-### Conceito
-
-- Reorientação do CRS: de deliberação episódica genérica para **arquitetura de orquestração multi-agente**
-- Memory Graph com planos hot/warm/cold
-- Human Memory Review como plano de governança
-- WorkGraph / commit de DAG como unidade de plano oficial
-- Contratos de autoridade v0.3 + schemas JSON iniciais
+## 0.3.1 — 2026-07-21
 
 ### Docs
 
-- `docs/00-tese.md` … `docs/05-contratos-autoridade.md`
+- Full repository content translated to English  
+- Portuguese doc filenames removed in favor of English paths
+
+## 0.3.0 — 2026-07-21
+
+### Concept
+
+- CRS reorientation: from generic episodic deliberation to a **multi-agent orchestration architecture**
+- Memory Graph with hot/warm/cold planes
+- Human Memory Review as a governance plane
+- WorkGraph / DAG commit as the unit of official plan
+- Authority contracts v0.3 + initial JSON schemas
+
+### Docs
+
+- `docs/00-thesis.md` … `docs/05-authority-contracts.md`
 - `content/linkedin.md`, `content/x-thread.md`
 
-### Nota histórica
+### Historical note
 
-A linha de pesquisa anterior (runtime L1 em Rust, proxy OpenAI-like, evals A/B) validou partes do contrato proposal/commit e foi descontinuada como produto. Este repositório publica a tese consolidada v0.3.
+The earlier research line (Rust L1 runtime, OpenAI-like proxy, A/B evals) validated parts of the proposal/commit contract and was discontinued as a product surface. This repository publishes the consolidated v0.3 thesis.
