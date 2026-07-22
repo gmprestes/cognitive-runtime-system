@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/gmprestes/cognitive-runtime-system/schemas/lesson.schema.json",
+  "title": "CRS Lesson",
+  "type": "object",
+  "required": ["id", "kind", "content", "status", "from_episodes", "created_at"],
+  "properties": {
+    "id": { "type": "string" },
+    "kind": {
+      "type": "string",
+      "enum": ["procedure", "strategy_prior", "constraint", "entity_fact"]
+    },
+    "content": {
+      "type": "object",
+      "required": ["claim"],
+      "properties": {
+        "claim": { "type": "string" },
+        "scope": {
+          "type": "object",
+          "properties": {
+            "repo": { "type": "string" },
+            "team": { "type": "string" },
+            "environment": { "type": "string" }
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["candidate", "active", "retired", "rejected"]
+    },
+    "from_episodes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "provenance": { "type": "object" },
+    "impact": {
+      "type": "object",
+      "properties": {
+        "helped": { "type": "integer", "minimum": 0 },
+        "hurt": { "type": "integer", "minimum": 0 },
+        "unused": { "type": "integer", "minimum": 0 }
+      }
+    }
+  },
+  "additionalProperties": true
+}

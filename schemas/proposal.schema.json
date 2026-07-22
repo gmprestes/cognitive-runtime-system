@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/gmprestes/cognitive-runtime-system/schemas/proposal.schema.json",
+  "title": "CRS Proposal",
+  "type": "object",
+  "required": ["id", "opening", "created_at", "model_id", "input_view_hash", "payload"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "opening": {
+      "type": "string",
+      "enum": [
+        "propose_plan",
+        "propose_replan",
+        "rank_actions",
+        "split_work",
+        "accept_child_result",
+        "propose_belief",
+        "propose_lesson",
+        "request_human_review",
+        "halt"
+      ]
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "model_id": { "type": "string" },
+    "model_version": { "type": "string" },
+    "input_view_hash": { "type": "string" },
+    "uncertainty": { "type": "number", "minimum": 0, "maximum": 1 },
+    "raw_response_hash": { "type": "string" },
+    "payload": { "type": "object" }
+  },
+  "additionalProperties": false
+}

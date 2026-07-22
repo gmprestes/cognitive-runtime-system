@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/gmprestes/cognitive-runtime-system/schemas/work-node.schema.json",
+  "title": "CRS WorkNode",
+  "type": "object",
+  "required": ["id", "title", "goal_id", "depends_on", "status", "created_at"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "goal_id": { "type": "string" },
+    "depends_on": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "owner_role": { "type": "string" },
+    "owner_agent_id": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "ready", "running", "blocked", "done", "failed", "cancelled"]
+    },
+    "budget": {
+      "type": "object",
+      "properties": {
+        "max_minutes": { "type": "number" },
+        "max_cost": { "type": "number" },
+        "max_tool_calls": { "type": "integer" }
+      }
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "artifact_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": true
+}
