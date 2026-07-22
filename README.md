@@ -81,20 +81,24 @@ CRS treats work as a **DAG** (directed acyclic graph): tasks with dependencies, 
 
 ### 2. Memory without ownership
 
-Today “agent memory” is often:
+Today, what people call “agent memory” is usually one of these shortcuts:
 
-- a long context window  
-- a vector store of similar text  
-- a chat log treated as truth  
+| Common form | What it actually is | Limit |
+|---|---|---|
+| **Long context window** | Whatever fits in the conversation *right now* | Vanishes across sessions; no owner, no provenance |
+| **Plain text / `.md` file** (`MEMORY.md`, notes, “brain dump”) | Accumulated prose on disk | Easy to write, hard to validate; mixes fact, opinion, and junk |
+| **Vector store / RAG** | Chunks *similar* to the query | Similarity ≠ approved operational truth |
+| **Chat log** | Message history | High noise; “the agent said so” becomes pseudo-policy |
 
-None of those answer:
+These formats help in the short term. They fail as **organizational memory**, because they almost never answer:
 
 - *Who approved this as company knowledge?*  
 - *What evidence supports it?*  
 - *Did reusing it help or hurt?*  
 - *What supersedes it now?*  
+- *Which repo, team, or environment does this apply to?*  
 
-Without ownership, multi-agent systems scale **rumor** at the same speed they scale productivity.
+Without ownership and evaluation, multi-agent systems scale **rumor** at the same speed they scale productivity — even when the rumor is neatly written in a `.md` file.
 
 ### 3. Human-in-the-loop in the wrong place
 

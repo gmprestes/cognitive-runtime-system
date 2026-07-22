@@ -81,20 +81,24 @@ O CRS trata trabalho como um **DAG** (grafo dirigido acíclico): tarefas com dep
 
 ### 2. Memória sem dono
 
-Hoje “memória de agente” costuma ser:
+Hoje, o que se chama de “memória de agente” quase sempre é um destes atalhos:
 
-- uma context window longa  
-- um vector store de texto similar  
-- um log de chat tratado como verdade  
+| Forma comum | O que realmente é | Limite |
+|---|---|---|
+| **Context window longa** | O que cabe na conversa *agora* | Some entre sessões; não tem dono nem proveniência |
+| **Arquivo de texto / `.md`** (`MEMORY.md`, notas, “brain dump”) | Prosa acumulada no disco | Fácil de gravar, difícil de validar; mistura fato, opinião e lixo |
+| **Vector store / RAG** | Trechos *parecidos* com a pergunta | Similaridade ≠ verdade operacional aprovada |
+| **Log de chat** | Histórico de mensagens | Ruído alto; “o agente disse” vira pseudo-política |
 
-Nada disso responde:
+Esses formatos ajudam no curto prazo. Falham como **memória da organização**, porque quase nunca respondem:
 
 - *Quem aprovou isso como conhecimento da empresa?*  
 - *Qual evidência sustenta?*  
 - *Reutilizar ajudou ou atrapalhou?*  
 - *O que supersede isso agora?*  
+- *Isto vale para qual repo, time ou ambiente?*  
 
-Sem dono, multiagente escala **rumor** na mesma velocidade em que escala produtividade.
+Sem dono e sem avaliação, multiagente escala **rumor** na mesma velocidade em que escala produtividade — inclusive quando o rumor está bem escrito em um `.md`.
 
 ### 3. Human-in-the-loop no lugar errado
 
